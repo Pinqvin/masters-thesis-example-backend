@@ -9,6 +9,7 @@ import createApp from './app';
 dotenv.config();
 
 import logger from './util/logger';
+import connect from './db';
 import { PORT } from './config';
 
 function closeServer(server: Server) {
@@ -16,6 +17,7 @@ function closeServer(server: Server) {
   server.close(() => {
     logger.info('Server has stopped listening to incoming connections');
     logger.info('Closing database connection');
+    connect().destroy();
   });
 }
 

@@ -1,0 +1,16 @@
+---
+version: '3'
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile-postgres
+    volumes:
+      - database:/var/lib/postgres/data
+      - ./tools/init-database.sql:/docker-entrypoint-initdb.d/init-database.sql
+    ports:
+      - "37912:5432"
+
+volumes:
+  database:
