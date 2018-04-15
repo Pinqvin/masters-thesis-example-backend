@@ -1,8 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import compression from 'compression';
-import errorhandler from 'errorhandler';
 import bodyParser from 'body-parser';
 import logger from './util/logger';
+import router from './router';
 
 function handleErrors(err: any, _: Request, res: Response, next: NextFunction) {
   if (!res.headersSent && err.status) {
@@ -11,14 +11,10 @@ function handleErrors(err: any, _: Request, res: Response, next: NextFunction) {
     if (err.expose) {
       logger.error(err.stack || err);
 
-      return res.format({
-        text: () => res.send(err.message),
-        json: () => res.json({
-          error: {
-            message: err.message
-          }
-        }),
-        default: () => res.type('text/plain').send(err.message)
+      return res.json({
+        error: {
+          message: err.message
+        }
       });
     }
   }
@@ -36,6 +32,8 @@ function createApp() {
   app.use(compression());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
+
+  app.use('/api', router);
 
   app.use(handleErrors);
 
