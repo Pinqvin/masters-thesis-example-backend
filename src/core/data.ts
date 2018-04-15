@@ -13,5 +13,5 @@ export async function getDataById(id: number): Promise<Data> {
     return undefined;
   }
 
-  return result;
+  return result[0];
 }
