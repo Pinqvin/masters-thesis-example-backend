@@ -160,6 +160,10 @@
   dependencies:
     "@types/superagent" "*"
 
+"@types/throng@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/throng/-/throng-4.0.2.tgz#e352f5f86433e9dfbf3258414191852d25b2274f"
+
 "@types/tough-cookie@*":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-2.3.2.tgz#e0d481d8bb282ad8a8c9e100ceb72c995fb5e709"
@@ -2838,6 +2842,10 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+lodash.defaults@^4.0.1:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+
 lodash.get@~4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
@@ -4301,6 +4309,12 @@ test-exclude@^4.2.1:
 throat@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
+
+throng@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/throng/-/throng-4.0.0.tgz#983c6ba1993b58eae859998aa687ffe88df84c17"
+  dependencies:
+    lodash.defaults "^4.0.1"
 
 through@2, through@~2.3, through@~2.3.1:
   version "2.3.8"

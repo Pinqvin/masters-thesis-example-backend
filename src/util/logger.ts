@@ -5,7 +5,7 @@ import * as config from '../config';
 const logger = new (Logger)({
   transports: [
     new (winston.transports.Console)({
-      level: config.NODE_ENV === 'production' ? 'error' : 'debug',
+      level: config.NODE_ENV === 'production' ? 'info' : 'debug',
       timestamp: true,
       colorize: config.NODE_ENV !== 'production'
     })

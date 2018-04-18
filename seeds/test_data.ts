@@ -41,7 +41,7 @@ exports.seed = async function (knex: Knex): Promise<any> {
   let buffer = [];
 
   for (let i = 0; i < 1000000; ++i) {
-    buffer.push([i + 1, faker.random.boolean().toString(), faker.random.number(), faker.lorem.text()]);
+    buffer.push([i, faker.random.boolean().toString(), faker.random.number(), faker.lorem.text()]);
 
     if (buffer.length >= 100000) {
       console.log(`Writing ${buffer.length} items to stream`);
