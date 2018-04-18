@@ -6,8 +6,10 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn serve",
+    "start-clustered": "yarn serve-clustered",
     "build": "yarn build-ts && yarn tslint",
     "serve": "node dist/index.js",
+    "serve-clustered": "node dist/index-clustered.js",
     "watch-node": "nodemon dist/index.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn watch-ts\" \"yarn watch-node\"",
     "test": "jest --forceExit --coverage --verbose",
@@ -17,7 +19,8 @@
     "debug": "yarn build && yarn watch-debug",
     "serve-debug": "nodemon --inspect dist/index.js",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn watch-ts\" \"yarn serve-debug\"",
-    "migrate": "knex migrate:latest"
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
